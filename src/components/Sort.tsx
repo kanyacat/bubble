@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux"
 import { RootState } from "../redux/store"
 
+
 const Sort = () => {
-  const array = useSelector((state: RootState) => state.sort.array)
+    const array = useSelector((state: RootState) => state.sort.array)
 
     return (
     <div>
