@@ -1,18 +1,17 @@
 import {  useState } from "react"
 import generateArray from "../helpers/GenerateArray"
+import { setArray } from "../redux/Sort/sortSlice"
+import { useAppDispatch } from "../redux/hooks/AppDispatch"
 
-interface SnuffleFormProps {
-  setArray: React.Dispatch<React.SetStateAction<number[]>>
-}
+const SnuffleForm = () => {
+  const dispatch = useAppDispatch()
 
-const SnuffleForm = (props: SnuffleFormProps) => {
-  const {setArray} = props
     const [length, setLength] = useState<number>(30)
     
 
     const handleArray = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault()
-        setArray(generateArray(length))
+        dispatch(setArray(generateArray(length)))
       }
     
     return (
