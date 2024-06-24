@@ -1,10 +1,10 @@
 import {  useState } from "react"
 import generateArray from "../helpers/GenerateArray"
-import { useDispatch } from "react-redux"
-import { setArray } from "../redux/sortSlice"
+import { setArray } from "../redux/Sort/sortSlice"
+import { useAppDispatch } from "../redux/hooks/AppDispatch"
 
 const SnuffleForm = () => {
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
     const [length, setLength] = useState<number>(30)
     

@@ -1,13 +1,14 @@
 import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../redux/store"
-import { setArray } from "../redux/sortSlice"
+import { setArray } from "../redux/Sort/sortSlice"
+import { useAppSelector } from "../redux/hooks/AppSelector"
+import { useAppDispatch } from "../redux/hooks/AppDispatch"
 
 const SortForm = () => {
  
-  const array = useSelector((state: RootState) => state.sort.array)
+  const array = useAppSelector((state: RootState) => state.sort.array)
   const [duration, setDuration] = useState<number>(100)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const handleSort = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
