@@ -1,4 +1,6 @@
-const bubbleSort = (array: number[], setArray: React.Dispatch<React.SetStateAction<number[]>>, duration: number) => {
+import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
+
+const bubbleSort = (array: number[], setArray: ActionCreatorWithPayload<number[], "sort/setArray">, duration: number) => {
     const newArr = [...array];
     for (let i = 0; i < newArr.length; i++) {
         for (let j = 0; j < newArr.length - i - 1; j++) {

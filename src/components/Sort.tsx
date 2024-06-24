@@ -1,9 +1,8 @@
-interface SortProps {
-    array: number[]
-}
+import { useSelector } from "react-redux"
+import { RootState } from "../redux/store"
 
-const Sort = (props: SortProps) => {
-  const {array} = props
+const Sort = () => {
+  const array = useSelector((state: RootState) => state.sort.array)
 
     return (
     <div>

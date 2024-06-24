@@ -1,18 +1,24 @@
 import { useState } from "react"
 import bubbleSort from "../helpers/BubbleSort"
+import { useDispatch, useSelector } from "react-redux"
+import { RootState } from "../redux/store"
+import { setArray } from "../redux/sortSlice"
 
-interface SortFormProps {
-    array: number[]
-  setArray: React.Dispatch<React.SetStateAction<number[]>>
-}
+// interface SortFormProps {
+//     array: number[]
+//   setArray: React.Dispatch<React.SetStateAction<number[]>>
+// }
 
-const SortForm = (props: SortFormProps) => {
-  const {array, setArray} = props
+const SortForm = () => {
+ 
+
+  const array = useSelector((state: RootState) => state.sort.array)
   const [duration, setDuration] = useState<number>(100)
+  const dispatch = useDispatch()
 
   const handleSort = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
-    bubbleSort(array, setArray, duration)
+    bubbleSort(array, dispatch(setArray), duration)
   }
     return  (
     <form>
