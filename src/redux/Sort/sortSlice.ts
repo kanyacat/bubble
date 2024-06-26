@@ -1,25 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface sortState {
-  array: number[]
+  array: number[];
 }
 
 const initialState: sortState = {
   array: [],
-}
+};
 
 export const sortSlice = createSlice({
-  name: 'sort',
+  name: "sort",
   initialState,
   reducers: {
     setArray: (state, action: PayloadAction<number[]>) => {
-      state.array = action.payload
+      state.array = action.payload;
     },
   },
-})
+});
 
 // Action creators are generated for each case reducer function
-export const { setArray } = sortSlice.actions
+export const { setArray } = sortSlice.actions;
 
-export default sortSlice.reducer
+export default sortSlice.reducer;

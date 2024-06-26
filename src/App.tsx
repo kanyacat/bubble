@@ -1,16 +1,16 @@
-import './App.css';
-import SnuffleForm from './components/SnuffleForm';
-import Sort from './components/Sort';
-import SortForm from './components/SortForm';
+import "./App.css";
+import SnuffleForm from "./components/SnuffleForm";
+import Sort from "./components/Sort";
+import SortForm from "./components/SortForm";
 
 function App() {
   return (
-      <>  
-        <SnuffleForm />
-        <SortForm />
-        <Sort />
-      </>
+    <>
+      <SnuffleForm />
+      <SortForm />
+      <Sort />
+    </>
   );
 }
 
-export default App
+export default App;
